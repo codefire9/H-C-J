@@ -1,0 +1,111 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <script>
+            function billCalculation ()
+            {
+                var name =document.getElementById("customerName").value;
+              var wholecashews=document.getElementById("wholecashews").value;
+              var halfcashews=document.getElementById("halfcashews").value;
+              var brokencashews=document.getElementById("brokencashews").value;
+              var distance=document.getElementById("distance").value;
+              var amount =(1100 * wholecashews)+(800 *halfcashews)+(650 *brokencashews)+(distance *22);
+              
+              document.getElementById("result").   innerHTML = " Hi "+name+" ,you have to pay "+amount.toFixed(2)+" thank for visting us!!!" ;
+              return false;
+            }
+        </script>
+       
+        <style>
+            body{
+                color:#00FF7F;
+            }
+            h1{
+                color :#FFFFFF;
+                font:Arial;
+                font-style :italic;
+                background-color: #D2691E;
+                text-align: center;
+            }
+            #a{
+                font-weight: "bold";
+                font: Arial;
+                background-color: #D2691E;
+                width:13em;
+                height:35px;
+            }
+            #result
+            {
+                font-weight: bold;
+                font:Arial;
+                font-size:24px;
+                color:#800000;
+            }
+    
+        </style>
+   
+    </head>
+    <body>
+        <form onsubmit=" return billCalculation ()">
+            <h1>Mahima Cashew Store</h1>
+<table>
+    <tr>
+        <td>
+            customer name <input type ="text" id ="customerName" name ="customerName" placeholder="Enter Your Name" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contact No  <input type ="tel" id ="contactno" name ="contactno" pattern="[7-9]{1}[0-9]{9}" placeholder="Enter Your mobile no" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Date of order received <input type ="date" id ="bookingdate" name ="bookingdate" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            whole cashew (in Kg) <input type ="number" id ="wholecashews" name ="wholecashews" min="0" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Half cashew (in Kg) <input type ="number" id ="halfcashews" name ="halfcashews" min="0" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Broken cashew (in Kg) <input type ="number" id ="brokencashews" name ="brokencashews" min="0" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address <textarea type="text" id="address" name ="address" rows="5" cols ="25" placeholder="Enter your address" required="required"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+          Distance (in km) <input type ="number" id ="distance" name ="distance" min="0" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Expected date of delivery <input type="date" id="deliverydate" name="deliverydate" required="required">
+        </td>
+    </tr>
+    <tr id ="a">
+        <td >
+            <input type="button" id="submit"  onclick=" billCalculation ()" value ="submit">
+        </td>
+        <td>
+            <input type ="reset" id="reset" name="reset" value ="clear">
+        </td>
+    </tr>
+</table>
+        </form>
+        <div id="result">
+            
+        </div>
+       </body>
+    </html>

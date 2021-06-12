@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Remove the Comments and fill up the relevant code -->
+
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+
+    <!-- Do specify all the component-ids (incl. div ids) correctly for your code to get evaluated successfully -->
+
+    <!-- Most importantly, evaluate your solution without 'syntax errors' in javascript -->
+
+    
+
+    <title>AC Maintenance Service</title>
+
+    <script type="text/javascript">
+
+    // Do not use let keyword to initialize a javascript variable. Instead use var. 
+
+        function bookAppointment() {
+
+            /* Fill  the Javascript code calculating the service charge and display the required appiontment details */
+
+            var customerName=document.getElementById("customerName").value;
+
+            var acType=document.getElementById("acType").value;
+
+            var serviceType=document.getElementById("serviceType").value;
+
+            var email=document.getElementById("email").value;
+
+            var serviceCharge=0;
+
+            if(serviceType=="Cleaning")
+
+            serviceCharge=500;
+
+            if(serviceType=="Repair")
+
+            serviceCharge=1000;
+
+            if(serviceType=="Gas Refill")
+
+            serviceCharge=1500;
+
+            if(document.getElementById("yearlyMaintenance").checked)
+
+            {
+
+                serviceCharge+=1000;
+
+                document.getElementById("result").innerHTML="Hello "+customerName+", your service appointment for "+acType+" AC "+serviceType+" with yearly maintenance will be send to your email ID "+email+" and the estimated service charge will be Rs "+serviceCharge;
+
+            }
+
+            else
+
+            {
+
+                 document.getElementById("result").innerHTML="Hello "+customerName+", your service appointment for "+acType+" AC "+serviceType+" without yearly maintenance will be send to your email ID "+email+" and the estimated service charge will be Rs "+serviceCharge;;
+
+            }
+
+            
+
+            
+
+            return false;
+
+        }
+
+    </script>
+
+    <style type="text/css">
+
+        body {
+
+            /* Fill attributes and values */
+
+            background-color: #0ca2b9;
+
+            width: 80%;
+
+            margin-left: 10%;
+
+        }
+
+        h1 {
+
+            /* Fill attributes and values */
+
+            color: #FFFFFF;
+
+            font-family: Calibri;
+
+            font-style: italic;
+
+            background-color: #900043;
+
+            text-align: center;
+
+        }
+
+        #result {
+
+            /* Fill attributes and values */
+
+            font-weight: bold;
+
+            font-family: Arial;
+
+            font-size: 24px;
+
+            color: #782e07;
+
+        }
+
+
+        #submit, #reset {
+
+            /* Fill attributes and values */
+
+            font-weight: bold;
+
+            font-family: Candara;
+
+            background-color: #556b2f;
+
+            width: 10em;
+
+            height: 35px;
+
+            border-radius: 10px;
+
+        }
+
+
+
+        input {
+
+            width:13.6em;
+
+        }
+
+        #appointment {
+
+            font-family:sans-serif;
+
+            width:80%;
+
+            border-collapse:collapse;
+
+            text-align:left;
+
+        }
+
+        #acType, textarea{
+
+            width:13.6em;
+
+        }
+
+        select {
+
+            width:14em;
+
+        }
+
+        td{
+
+            padding:3px;
+
+        }
+
+        #male, #female, #yearlyMaintenance {
+
+            width:10pt;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<h1> <!-- Fill the heading text -->AC Maintenance Service</h1>
+
+
+<form onsubmit="return bookAppointment()" >
+
+
+    <table id="appointment">
+
+        <tr>
+
+            <td> <!-- Fill the label for Customer Name --><label>Customer Name</label> </td>
+
+            <td> <!-- Fill the code for Customer Name --><input type="text" id="customerName" placeholder="Enter your name" required> </td>
+
+        </tr>
+
+<tr>
+
+            <td> <!-- Fill the label for Gender --><label>Gender</label> </td>
+
+            <td> <!-- Fill the code for Gender -->
+ 
+<input type="radio" id="male" name="gender" value="Male" >Male
+
+                <input type="radio" id="female" name="gender" value="Female" >Female </td>
+
+        </tr>
+
+    
+
+        <tr>
+
+            <td> <!-- Fill the label for Mobile Number --><label>Mobile Number</label> </td>
+
+            <td> <!-- Fill the code for Mobile Number --><input type="tel" id="mobileNumber" placeholder="Enter your mobile number" required> </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- Fill the label for Email ID --> <label>Email ID</label></td>
+
+            <td> <!-- Fill the code for Email ID --><input type="email" id="email" placeholder="Enter your email Id" required ></td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- Fill the label for Address --><label>Address</label> </td>
+
+            <td> <!-- Fill the code for Address --><textarea id="address" rows="5" cols="25" required placeholder="Enter your address"></textarea></td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- Fill the label for AC Type --><label>AC Type</label></td>
+
+            <td> <!-- Fill the code for AC Type --><input list="acTypes" id="acType" autocomplete required>
+
+            <datalist id="acTypes">
+
+                <option value="Split">
+
+                <option value="Window">
+
+                <option value="Centralized">
+
+                <option value="Portable">
+
+            </datalist> </td>
+
+        </tr>
+
+        
+
+        <tr>
+
+            <td> <!-- Fill the label for Service Type --> <label>Service Type</label></td>
+
+            <td> <!-- Fill the code for Service Type --><select id="serviceType" name="serviceType">
+
+                <option value="Cleaning">Cleaning</option>
+
+                <option value="Repair">Repair</option>
+
+                <option value="Gas Refill">Gas Refill</option>
+
+            </select> </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- Fill the label for Date for Appointment --><label>Date for Appointment</label> </td>
+
+            <td> <!-- Fill the code for Date for Appointment --><input type="date" id="dateForAppointment" required> </td>
+
+        </tr>
+
+        
+
+        <tr>
+
+            <td> <!-- Fill the label for Yearly Maintenance --><label>Yearly Maintenance</label> </td>
+
+            <td> <!-- Fill the code for Yearly Maintenance  --><input type="checkbox" id="yearlyMaintenance" value="Select if required">Select if required </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- Fill the label for duration in months from the previous service. --><label>Duration in months from the previous service</label> </td>
+
+            <td> <!-- Fill the code for duration in months from the previous service. --><input type="range" id="duration" min="0" max="6"> </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td> <!-- empty cell --></td> 
+
+            <td>
+
+                <!--Fill the code for submit button--> <input type="submit" id="submit" value="Submit">
+
+                <!--Fill the code for reset button--> <input type="reset" value="Clear" id="reset">
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td colspan="2">
+
+                <!--Fill the code below for div tag-->
+
+                <div id="result"></div>
+
+            </td>
+
+        </tr>
+
+
+    </table>
+
+</form>
+
+
+</body>
+
+</html>

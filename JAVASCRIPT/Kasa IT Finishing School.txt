@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+body{
+background-color: #FFAACC;
+}
+
+h1
+{
+color: #770080;
+font-family: Courier New;
+font-style: italic;
+text-align: center;
+
+}
+
+form
+{
+margin :0 auto;
+width:300px;
+}
+
+#result
+{
+color: #770080;
+
+font-weight: bold;
+
+}
+</style>
+
+<title>Infotech College</title>
+<script>
+function calculateFeedbackRating()
+{
+    var r=document.getElementById('cat').value;
+    var rate;
+    if(r=="Excellent") rate=5;
+    else if(r=="Very Good") rate=4;
+    else if(r=="Good") rate=3;
+    else if(r=="Average") rate=2;
+    else if(r=="Below Average") rate=1;
+    
+    var trainer=document.getElementById('trainerName').value;
+    document.getElementById('result').innerHTML="Feedback rating of "+trainer+" is "+rate;
+    return false;
+}
+
+</script>
+
+</head>
+<body>
+<!--Write necessary code wherever needed to complete this knock out code challenge  -->
+<h1>College Training Feedback Form </h1>
+<form onsubmit="return calculateFeedbackRating()" >
+<table>
+
+<tr>
+<td>Participant Name</td>
+<td><input type="text" name="participantName" id="participantName" placeholder="Enter your name" required></td>
+</tr>
+
+<tr>
+<td>College Name</td>
+<td><input type="text" name="collegeName" required></td>
+</tr>
+
+<tr>
+<td>Participant Address</td>
+<td><textarea name="participantAddress" rows="5" cols="20" required></textarea></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="male" required>Male
+<input type="radio" name="gender" value="female" required>Female
+</td>
+</tr>
+
+<tr>
+<td>Email ID</td>
+<td><input type="email" name="email" required></td>
+</tr>
+
+<tr>
+<td>Mobile Number</td>
+<td><input type="text" name="mobileNumber" pattern="[7-9]{1}[0-9]{9}" required></td>
+</tr>
+
+<tr>
+<td>Trainer’s Name</td>
+<td><input type="text" name="trainerName" id="trainerName" required></td>
+</tr>
+
+<tr>
+<td>Course Name</td>
+<td><input type="text" name="courseName" required></td>
+</tr>
+
+<tr>
+<td>Course Completion date</td>
+<td><input type="date" name="dateofcompletion" required></td>
+</tr>
+
+<tr>
+<td>Trainer's Feedback</td>
+<td><input name="trainerFeedback" id="cat" list="feedback">
+		<datalist id="feedback">   
+  		<option value="Excellent">Excellent</option>
+		<option value="Very Good">Very Good</option>
+		<option value="Good">Good</option>
+		<option value="Average">Average</option>
+		<option value="Below Average">Below Average</option>
+		</datalist>
+
+</td>
+</tr>
+
+
+<tr>
+<td><input type="submit" name="submit" value="Submit Feedback" onclick="calculateFeedbackRating()"></td>
+<td><input type="reset" name="reset" value="Clear"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<div id="result"></div>
+</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

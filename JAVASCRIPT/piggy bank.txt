@@ -1,0 +1,174 @@
+
+<!Doctype html>
+<html>
+<head>
+<style type="text/css">
+body{
+background-color:#F0E68C;
+}
+#discounttable{
+border-style:solid;
+float:right;
+}
+h1{
+color:#800080;
+font-family:cursive;
+text-align:center;
+}
+header{
+float:right;
+}
+</style>
+<script type="text/javascript">
+function calculateTotalSavings(){
+var amt =document.getElementsByName('amount')[0].value;
+var tenur=document.getElementsByName('tenure')[0].value;
+var saving_bank=document.getElementsByName('savingType')[0].value;
+var totalSavings;
+if(document.getElementById("NormalCitizen").checked && saving_bank=='FD' && tenur <= 2){
+totalSavings=(amt*tenur*7)/100+parseInt(amt);
+}
+
+else if(document.getElementById("NormalCitizen").checked && saving_bank=='FD' && tenur > 2 && tenur <= 4){
+totalSavings=(amt*tenur*7.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("NormalCitizen").checked && saving_bank=='FD' &&  tenur > 4 && tenur <= 5){
+ totalSavings=(amt*tenur*8)/100+parseInt(amt);
+}
+
+else if(document.getElementById("NormalCitizen").checked && saving_bank=='RD' && tenur<= 2){
+totalSavings=(amt*tenur*6.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("NormalCitizen").checked && saving_bank=='RD' && tenur > 2 && tenur <= 4){
+totalSavings=(amt*tenur*6)/100+parseInt(amt);
+}
+
+else if(document.getElementById("NormalCitizen").checked && saving_bank=='RD' && tenur > 4 && tenur <= 5){
+totalSavings=(amt*tenur*5.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='FD' && tenur <= 2){
+totalSavings=(amt*tenur*7.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='FD' && tenur > 2 && tenur <= 4){
+totalSavings=(amt*tenur*8)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='FD' && tenur > 4 && tenur <= 5){
+totalSavings=(amt*tenur*8.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='RD' && tenur<= 2){
+totalSavings=(amt*tenur*7)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='RD' && tenur > 2 && tenur <= 4){
+totalSavings=(amt*tenur*6.5)/100+parseInt(amt);
+}
+
+else if(document.getElementById("SeniorCitizen").checked && saving_bank=='RD' && tenur > 4 && tenur <= 5){
+totalSavings=(amt*tenur*6)/100+parseInt(amt);
+}
+
+document.getElementById("result").innerHTML="Total Savings done "+totalSavings;
+}
+</script>
+
+</head>
+<body>
+<h1>PIGGY BANK SAVINGS CALCULATOR</h1>
+<form onsubmit="return false">
+
+<table>
+<tr><td>Customer Name</td>
+<td><input type="text" placeholder="Enter the Customer Name" name="customerName" pattern="[a-zA-Z ]+" required > </td>
+</tr>
+<tr>
+<td>Customer Type</td>
+<td><input type="radio" id="NormalCitizen" value="Normal Citizen" name="customerType" required>Normal Citizen
+<input type="radio" id="SeniorCitizen" value="Senior Citizen" name="customerType" required>Senior Citizen</td>
+</tr>
+<tr>
+<td>Address & ID Proof</td>
+<td><input type="checkbox" id="Address & ID Proof" name="addressProof" value="addressProof">
+<label for="Address & ID Proof"> Aadhar Card</label>
+<input type="checkbox" id="vehicle1" name="addressProof" value="addressProof">
+<label for="Address & ID Proof"> Pan Card</label>
+<input type="checkbox" id="vehicle1" name="addressProof" value="addressProof">
+<label for="Address & ID Proof"> Driving License</label>
+<input type="checkbox" id="vehicle1" name="addressProof" value="addressProof">
+<label for="Address & ID Proof">Passport</label>
+<input type="checkbox" id="vehicle1" name="addressProof" value="addressProof">
+<label for="Address & ID Proof">Voter Id</label></td>
+</tr>
+<tr>
+<td>Mobile Number</td>
+<td><input type="tel"  placeholder="Enter the Mobile Number" name="customerMobileNumber" pattern="[789]{1}[0-9]{9}" required></td>
+</tr>
+<tr>
+
+<td>Type of Savings</td>
+<td> <input type="text" name="savingType" list="savings">
+<datalist id="savings">
+<option value="FD">
+<option value="RD">
+</datalist>
+</td>
+</tr>
+<tr><td>Amount</td>
+<td><input type="number" placeholder="Enter the Amount" name="amount" min="500" required></td>
+</tr>
+<tr>
+<td>Tenure</td>
+<td><input type="number" required min="1" max="5" value="1" name="tenure" id="tenure" >
+</td>
+</tr>
+<tr><td>
+<input type="submit" onclick="calculateTotalSavings()" name="submit" value="Calculate Savings">
+</td><td><input type="reset" name="reset" value="Reset"></td></tr>
+</table>
+</form>
+<div id="result"></div>
+<table id="discounttable" border="1">
+<caption>Interest Rate Chart</caption>
+<thead>
+<tr>
+<th>Deposit Type</th>
+<th>Tenure</th>
+<th>Interst Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="3">FD</td>
+<td>1 to 2 years</td>
+<td>7 &lt;=250</td>
+</tr>
+<tr>
+<td>Above 2 years to 4 years</td>
+<td>7.5 &gt;250</td>
+</tr>
+<tr>
+<td>Above 4 years to 5 years</td>
+<td>8 &lt;=250</td>
+</tr>
+<tr>
+<td rowspan="3">RD</td>
+<td>1 to 2 years</td>
+<td>6.5 &gt;250</td>
+</tr>
+<tr>
+<td>Above 2 years to 4 years</td>
+<td>6 &gt;250</td>
+</tr>
+<tr>
+<td>Above 4 years to 5 years</td>
+<td>5.5 &gt;250</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

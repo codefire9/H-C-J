@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <form onsubmit="return display()">
+            <h3>AirFine AirLines</h3>
+            <table>
+                <tr><td>Passenger Name</td><td><input type="text" id="pname" name="Passenger Name" placeholder="Enter the passenger name" required=""></td></tr>
+                <tr><td>Phone Number</td><td><input type="text" id="mobile" name="mobile" pattern="[789]{1}[0-9]{9}" min="7000000000" max="9999999999" maxlength="10" placeholder="Enter the phone number" required=""></td></tr>
+                <tr><td>Ticket Id</td><td><input type="number" id="tid" name="Ticket Id" placeholder="Enter the ticket id" required=""></td></tr>
+                <tr><td>Date of Trip</td><td><input type="date" id="tripdate" name="Date of Trip" required=""></td></tr>
+                <tr><td>Number of Tickets</td><td><input type="number" id="noOfTickets" name="Number of Tickets" placeholder="Enter the number of tickets" required=""></td></tr>
+                <td>Date of Cancellation</td><td><input type="date" id="cancellationdate" name="Date of Cancellation" required=""></td></tr>
+                <tr><td><label>Seat Type</label></td><td>
+                    <select name="Seat Type" id="stype" required="">
+                        <option id="seat" value="seat">Seat Type..</option>
+                        <option id="eco" value="eco">Economy Class Seats</option>
+                        <option id="prem" value="prem">Premium Class Seats</option>
+                        <option id="bus" value="bus">Business Class Seats</option>
+                        <option id="first" value="first">First Class Seats</option>
+                        </select>
+                        </td></tr>
+                <tr><td><label>Amount Paid</label></td><td><input type="number" id="amountPaid" name="Amount Paid" placeholder="Enter the amount paid" required=""></td></tr>
+                
+            </table>
+            </br>
+            <input type="submit" id="submit" value="CONFIRM CANCELLATION">
+            </br></br>
+            <div id="result" name="result"></div>
+        </form>
+
+        <style>
+            body
+            {
+                background-image: image;
+                background-size: 60%;
+                font-weight: bold;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: blue;
+            }
+            h3
+            {
+                color: #FFFFFF;
+                background-color: #FFCC66;
+                margin-left: auto;
+                margin-right: auto;
+                font-family:verdana;
+                padding: 5px;
+                border-radius: 6px;
+                text-align:center;
+                width: 50%;
+            }
+            table,tr,td
+            {
+                width : 50%;
+                border-style: solid;
+                border-color: black;
+                margin-left: auto;
+                margin-right: auto;
+                border-spacing: 1px;
+                border-radius: 6px;
+                color: #FFFFFF;
+                background-color: transparent;
+                padding: 1px;
+                text-align: center;
+            }
+            div
+            {
+                font-size: 20px;
+                color: #FFFFFF;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #submit
+            {
+                color: #FFFFFF;
+                background-color: #FFCC66;
+                margin-left: 25%;
+                margin-right: auto;
+                padding: 5px;
+                width: 50%;
+                font-family: verdana;
+                font-weight: bold;
+                border-radius: 6px;
+            }
+            #result
+            {
+                color: #00CC66;
+                background-color: #FFFFFF;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 5px;
+                width: 50%;
+                font-size: 20px;
+            }
+
+
+</style>
+        
+        <script>
+            function display()
+            { 
+              var conFee,cp,convFee,canChr,refAmt;
+        var not = document.getElementById("noOfTickets").value;
+        var sType = document.getElementById("stype");
+        var st = sType.options[sType.selectedIndex].value;
+        var amtPaid = document.getElementById("amountPaid").value;
+        var pName = document.getElementById("pname").value;
+        if(st =="eco")
+        {
+            conFee = 200;
+            cp = 0.2;
+            
+        }else if(st == "prem"){
+        
+            conFee = 400;
+            cp=0.3;
+           
+        }else if(st == "bus"){
+        
+            conFee = 500;
+            cp=0.3;
+        }
+        else
+        {
+            conFee = 600;
+            cp=0.4;
+        }
+        
+        convFee = not*conFee;
+        canChr = amtPaid*cp;
+        refAmt = amtPaid -convFee-canChr;
+        document.getElementById('result').innerHTML = "Hi "+pName+", your ticket has been successfully cancelled and the refund amount is Rs."+refAmt;
+        return false;
+            }
+        </script>
+    </body>
+</html>

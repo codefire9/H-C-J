@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #ff9999;
+        }
+        
+        h1 {
+            color: #660066;
+            font-family: Verdana;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function costCalculation() {
+            var dur = document.getElementById("payment").value;
+            var contype = document.getElementById("bandType").value;
+            //alert(contype);
+            var plan = document.getElementsByName("plan");
+            var ptype, ans;
+            for (var i = 0; i < plan.length; i++) {
+                if (plan[i].checked) {
+                    ptype = plan[i].value;
+                    break;
+                }
+            }
+            if (ptype == "Sprint 200 GB" && contype == "Normal") {
+                ans = (150 * dur) + 349;
+            } else if (ptype == "Bolt 200 GB" && contype == "Normal") {
+                ans = (150 * dur) + 499;
+            } else if (ptype == "Rush 500 GB" && contype == "Normal") {
+                ans = (150 * dur) + 949;
+            } else if (ptype == "Speed 500 GB" && contype == "Normal") {
+                ans = (150 * dur) + 1299;
+            } else if (ptype == "Sprint 200 GB" && contype == "ADSL") {
+                ans = (200 * dur) + 349;
+            } else if (ptype == "Bolt 200 GB" && contype == "ADSL") {
+                ans = (200 * dur) + 499;
+            } else if (ptype == "Rush 500 GB" && contype == "ADSL") {
+                ans = (200 * dur) + 949;
+            } else if (ptype == "Speed 500 GB" && contype == "ADSL") {
+                ans = (200 * dur) + 1299;
+            } else if (ptype = "Sprint 200 GB" && contype == "DSL") {
+                ans = (300 * dur) + 349;
+            } else if (ptype == "Bolt 200 GB" && contype == "DSL") {
+                ans = (300 * dur) + 499;
+            } else if (ptype == "Rush 500 GB" && contype == "DSL") {
+                ans = (300 * dur) + 949;
+            } else if (ptype == "Speed 500 GB" && contype == "DSL") {
+                ans = (300 * dur) + 1299;
+            }
+            //alert(ans);
+            ans = parseInt(ans);
+            document.getElementById("result").innerHTML = "The bill amount is Rs " + ans;
+            return false;
+        }
+    </script>
+</head>
+ 
+<body>
+    <h1> Broadband Payment Portal</h1>
+    <form id="form" onsubmit="return costCalculation()">
+        <table>
+            <tr>
+                <td>Customer Name</td>
+                <td><input type="text" name="customerName" id="customerName" placeholder="Customer Name" required></td>
+            </tr>
+            <tr>
+                <td>Subscription Number</td>
+                <td><input type="number" name="subscription" id="subscription" min="0" placeholder="Subscription Number" required></td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" name="email" id="email" placeholder="sample@sample.com" required></td>
+            </tr>
+            <tr>
+                <td>Type of Broadband</td>
+                <td>
+                    <select name="bandType" id="bandType" required>
+                            <option value="Normal">Normal</option>
+                            <option value="ADSL">ADSL</option>
+                            <option value="DSL">DSL</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Plan Name</td>
+                <td><input type="radio" name="plan" id="type1" value="Sprint 200 GB">Sprint 200 GB</td>
+                <td><input type="radio" name="plan" id="type2" value="Bolt 200 GB">Bolt 200 GB</td>
+                <td><input type="radio" name="plan" id="type3" value="Rush 500 GB">Rush 500 GB</td>
+                <td><input type="radio" name="plan" id="type4" value="Speed 500 GB">Speed 500 GB</td>
+            </tr>
+            <tr>
+                <td>Payment for</td>
+                <td><input type="number" name="payment" id="payment" min="3" max="12" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="submit" name="submit" value="Calculate Bill Amount"></td>
+                <td><input type="reset" name="clear" id="clear" value="Reset"></td>
+            </tr>
+        </table>
+        <div id="result"></div>
+    </form>
+</body>
+
+</html>

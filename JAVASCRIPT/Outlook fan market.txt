@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify all the component-ids (incl. div ids) correctly for your code to get evaluated successfully -->
+    <!-- Most importantly, evaluate your solution without 'syntax errors' in javascript -->
+    
+    <title>Outlook Fan Market</title>
+    <script type="text/javascript">
+    // Do not use let keyword to initialize a javascript variable. Instead use var. 
+        function billCalculation() {
+            var uprice = document.getElementById("usha").value;
+            var bprice = document.getElementById("bajaj").value;
+            var oprice = document.getElementById("orient").value;
+            var hprice = document.getElementById("havells").value;
+            var cprice = document.getElementById("crompton").value;
+            var lprice = document.getElementById("luminous").value;
+            var mprice = document.getElementById("maharaja").value;
+            var total = uprice*1999 + 1500*bprice + 2100 * oprice + 1785 * hprice + 1960 * cprice + 1655 * lprice + 2249 * mprice;
+            if(total>5500){
+                total -= total * 0.15;
+            }
+            total = Math.round(total);
+            var text = "Hi, You have to pay Rs."+total+". Thanks for selecting us!!!";
+            document.getElementById("result").innerHTML = text;
+            return false;
+        }
+    </script>
+    
+<style type="text/css">
+::placeholder {
+ color: #6A5ACD;
+    opacity: 2;
+           }
+        
+input[type="email"], input[type="tel"], input[type="number"], input[type="text"],input[type="date"], textarea, select {
+ width: 85%;
+ color: #808B96;
+ font-weight: bold;
+ border-radius: 6px;
+ border-style: solid;
+ border-width: 2px;
+ border-color: #FFA07A;
+}
+
+input[type="submit"] {
+ background-color: #08088A;
+}
+label span {
+ color: #F0F8FF;
+}
+body {
+    background-color: #2E4053;
+}
+h1 {
+    /* Fill the attributes and values */
+    color: #FFFFFF;
+    font-family: Verdana;
+    border-style: 1px solid;
+    border-radius: 6px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1A5276;
+    text-align: center;
+}
+#result {
+     /* Fill the attributes and values */
+     font-weight: bold;
+     font-family: Bahnschrift;
+     font-size: 24px;
+     margin-left: 18em;
+     margin-right: auto;
+     color: #B3B6B7;
+}
+
+#submit {
+     /* Fill the attributes and values */
+     font-weight: bold;
+     color: #FFEFD5;
+     font-family: Bahnschrift;
+     background-color: transparent;
+     margin-right: auto;
+     height: 35px;
+     width: 13em;
+     margin-left: 35em;
+}
+#reset {
+    /* Fill the attributes and values */
+    font-weight: bold;
+     color: #FFEFD5;
+     font-family: Bahnschrift;
+     background-color: transparent;
+     margin-right: auto;
+     height: 35px;
+     width: 13em;
+     margin-left: 18em;
+}
+table {
+ width: 50%;
+ margin-right: auto;
+ margin-left: auto;
+ border-style: 3px groove;
+ border-spacing: 5px;
+ border-radius: 6px;
+}
+#billing td {
+ border-width: 1px;
+ border-style: solid;
+ border-color: #F4A460;
+ padding: 5px;
+ 
+}
+.b {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 14em;
+}
+#brandName td {
+ margin-left: auto;
+ margin-right: auto;
+ width: 50%;
+ border-width: 1px;
+ border-style: solid;
+ border-spacing: 5px;
+ border-radius: 6px;
+}
+#submit:hover, #reset:hover {
+ background-color: #2E8B57;
+ color: #FFFFFF;
+}
+        
+    </style>
+</head>
+<body>
+
+<h1> Outlook Fan Market   </h1>
+
+<form onsubmit="return billCalculation()" >
+
+    <table id="billing">
+      <tr>
+    <th id="details" colspan="2"></th>
+   </tr>
+   <tr>
+    <td>
+     <!-- Fill the label for Name --> 
+     <label for="name"><span><b>Name*</b></span></label>
+    </td>
+    <td>
+         <input type="text" name="name" id="name" pattern="[a-zA-Z\s]+" value="" placeholder="Enter the name" required />
+     
+       </td>
+   </tr>
+
+
+<tr>
+    <td>
+     <!-- Fill the label for Contact No --> 
+     <label for="contactNo"><span><b>Contact No*</b></span></label>
+    </td>
+    <td>
+     <input type="number" name="contactNo" id="contactNo" pattern="^[7-9]\d{9}$" placeholder="Enter the contact no" value="" required /> 
+     
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <!-- Fill the label for E-mail address --> 
+     <label for="email"><span><b>E-mail address</b></span></label>
+    </td>
+    <td>
+     <input type="email" name="email" id="email" placeholder="Example:abc@gmail.com" value="" required />
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <!-- Fill the label for Brand Name -->
+     <label><span><b>Brand Name</b></span></label>
+    </td>
+
+    <td>
+     <table id="brandName">
+      <tr>
+       <td>
+        <!-- Fill the label for Usha -->
+        <label for="usha"><span><b>Usha</b></span></label>
+       </td>
+       <td>
+        <input type="number" name="usha" id="usha" value="" min="0" required />
+       
+       </td>
+      </tr>
+
+      <tr>
+       <td>
+        <!-- Fill the label for Bajaj -->
+        <label for="bajaj"><span><b>Bajaj</b></span></label>
+       </td>
+       <td>
+        <input type="number" name="bajaj" id="bajaj" value="" min="0" required />
+       
+       </td>
+      </tr>
+      
+      <tr>
+       <td>
+        <!-- Fill the label for Orient -->
+        <label for="orient"><span><b>Orient</b></span></label>
+       </td>
+       <td>
+           <input type="number" name="orient" id="orient" value="" min="0" required />
+        
+       </td>
+      </tr>
+      
+      <tr>
+       <td>
+        <!-- Fill the label for Havells -->
+        <label for="havells"><span><b>Havells</b></span></label>
+       </td>
+       <td>
+        <!-- Fill the code for Havells -->
+        <input type="number" name="havells" id="havells" value="" min="0" required />
+       
+       </td>
+      </tr>
+      
+      <tr>
+       <td>
+        <!-- Fill the label for Crompton -->
+        <label for="crompton"><span><b>Crompton</b></span></label>
+       </td>
+       <td>
+        <!-- Fill the code for Crompton -->
+       <input type="number" name="crompton" id="crompton" value="" min="0" required />
+       </td>
+      </tr>
+      
+      <tr>
+       <td>
+        <!-- Fill the label for Luminous -->
+        <label for="luminous"><span><b>Luminous</b></span></label>
+       </td>
+       <td>
+        <!-- Fill the code for Luminous -->
+       <input type="number" name="luminous" id="luminous" value="" min="0" required />
+       </td>
+      </tr>
+      
+      <tr>
+       <td>
+        <!-- Fill the label for Maharaja -->
+        <label for="maharaja"><span><b>Maharaja</b></span></label>
+       </td>
+       <td>
+        <!-- Fill the code for Maharaja -->
+         <input type="number" name="maharaja" id="maharaja" value="" min="0" required />
+       </td>
+      </tr>
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <!-- Fill the label for Date of Booking --> 
+     <label for="date"><span><b>Date of Booking*</b></span></label>
+    </td>
+    <td>
+     <!-- Fill the code for Date of Booking--> 
+            <input type="date" name="date" id="date" value="" required />
+    </td>
+   </tr>
+
+
+
+   <tr>
+    <td>
+     <!-- Fill the label for Address --> 
+     <label for="address"><span><b>Address</b></span></label>
+    </td>
+    <td>
+     <!-- Fill the code for Address --> 
+         <textarea name="address" id="address" rows="5" cols="25" placeholder="Enter your address" required></textarea>
+    </td>
+   </tr>
+
+  
+  
+  </table>
+  <tr>
+   <td>
+    <input type="submit" name="submit" id="submit" value="Submit" /> 
+   
+   </td>
+   <td>
+    <input type="reset" name="reset" id="reset" value="Clear" /> 
+   
+   </td>
+  </tr>
+        <p class="b">
+    <div id="result">
+        
+    </div>
+  </p>
+  
+
+ </form>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify all the component-ids (incl. div ids) correctly for your code to get evaluated successfully -->
+    <!-- Most importantly, evaluate your solution without 'syntax errors' in javascript -->
+    
+    <title>Good Harvest Rice Store</title>
+    <script type="text/javascript">
+    // Do not use let keyword to initialize a javascript variable. Instead use var. 
+        function billCalculation() {
+            var result=document.getElementById("result");
+            var a  =parseInt(document.getElementById("arborioRice").value);
+            var bas=parseInt(document.getElementById("basmatiRice").value);
+            var bl =parseInt(document.getElementById("blackRice").value);
+            var j  =parseInt(document.getElementById("jasmineRice").value);
+            var br =parseInt(document.getElementById("brownRice").value);
+            var r  =parseInt(document.getElementById("redRice").value);
+            var c  =parseInt(document.getElementById("calroseRice").value);
+            var d  =parseInt(document.getElementById("distance").value);
+            
+            var amount=(600*a)+(200*bas)+(275*bl)+(260*j)+(135*br)+(100*r)+(300*c)+(22*d);
+            var name=document.getElementById("customerName").value;
+            
+            result.innerHTML="Hi "+name+", You have to pay Rs."+amount.toFixed(2)+".Thanks for visiting us!!!";
+            
+            return false;
+        }
+    </script>
+    <style type="text/css">
+        body{
+            background-color:  #9ACD32;
+            
+        }
+        h1 {
+            color: #FFFFFF;
+            font-family: Arial;
+            font-style: italic;
+            background-color: #FF8C00;
+            text-align: center;
+        }
+        #result {
+           font-size: 24px;
+           color: #800000;
+           display: block;
+           width: 90%;
+           font-family: calibri;
+           position: absolute;
+           font-weight: bold;
+        }
+
+        #submit, #reset {
+           font-weight: bold;
+           font-family: Times New Roman;
+           background-color: #FFA07A;
+           width: 13em;
+           height: 35px;
+        }
+
+
+        input[type="text"],input[type="tel"] {
+            width:13em;
+        }
+        input[type="number"]{
+            width:2cm;
+        }
+        #billing {
+            font-family:sans-serif;
+            width:80%;
+            border-collapse:collapse;
+        }
+        #types, #types td {
+           border-color: rgba(255, 255, 255, 1);
+           border-style: solid;
+           border-width: 1px;
+         padding: 5px;
+         background-color: #F4A460;
+         border-collapse: collapse;
+        }
+        td{
+            padding: 5px;
+        }
+       
+        
+    </style>
+</head>
+<body>
+
+<h1>Good Harvest Rice Store</h1>
+
+<form id="form_1" onsubmit="return billCalculation()" name="riceForm">
+
+    <table id="billing">
+        <tr>
+            <td><label for="customer name">Customer Name</label></td>
+            <td><input type="text" name="customer name" id="customerName" placeholder="Enter your name" required> </td>
+        </tr>
+
+ <tr>
+            <td><label for="contact number">Contact No</label></td>
+            <td><input type="tel" name="contact number" id="contactNo" placeholder="Enter your mobile number" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Date of order received">Date of order received</label> </td>
+            <td><input type="date" name="date of order received" id="bookingDate" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Rice type and quality">Rice type & quantity</label></td>
+        
+        <td>
+     <table id="types"> 
+   
+        <tr>
+            <td><label for="Arborio rice">Arborio rice</label></td>
+            <td><input type="number" min="0" max="" name="Arborio rice" id="arborioRice" required></td>
+        
+        <tr>
+            <td><label for="Basmati rice">Basmati rice</label></td>
+            <td><input type="number" min="0" max="" name="Basmati rice" id="basmatiRice" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Black rice">Black rice</label></td>
+            <td><input type="number" min="0" max="" name="Black rice" id="blackRice" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Jasmine rice">Jasmine rice</label></td>
+            <td><input type="number" min="0" max="" name="Jasmine rice" id="jasmineRice" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Brown rice">Brown rice</label></td>
+            <td><input type="number" min="0" max="" name="Brown rice" id="brownRice" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Red rice">Red rice</label></td>
+            <td><input type="number" min="0" max="" name="Red rice" id="redRice" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Calrose rice">Calrose rice</label></td>
+            <td><input type="number" min="0" max="" name="Calrose rice" id="calroseRice" required></td>
+        </tr>
+       
+        </table>
+        </td>
+        </tr>
+        
+        <tr>
+            <td><label for="Address">Address</label> </td>
+            <td><textarea id="address" name="Address" rows="5" cols="25" placeholder="Enter your Address" required></textarea> </td>
+        </tr>
+        
+         <tr>
+            <td><label for="Distance">Distance(in km)</label></td>
+            <td><input type="number" min="0" max="" name="Distance" id="distance" required></td>
+        </tr>
+        
+        <tr>
+            <td><label for="Expected date of delivery">Expected date of delivery</label> </td>
+            <td><input type="date" name="Expected date of delivery" id="deliveryDate" required> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" id="submit" value="Submit"></td>
+            <td>
+                
+                <input type="reset" name="Clear" id="reset" value="Clear"> 
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+            
+                <div id="result"></div>
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>

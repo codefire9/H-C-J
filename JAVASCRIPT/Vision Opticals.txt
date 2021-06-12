@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vision Opticals</title> 
+		<style>
+		
+	    	input[type="number"], input[type="text"], input[type="date"], input[type="email"], input[type="tel"], select {
+	    	width:98%;
+		    }
+		
+		    body{
+		        background-image: url("VISION.png");
+		        background-size: 70%;
+		        font-weight: bold;
+            }
+    			   
+    		div{
+    	        font-size:20px;
+    	        color:#FFFFFF;
+    		    text-align: center;
+    		    margin-left: auto;
+    		    margin-right: auto;
+    		}
+		
+	        h3{
+            font-family: Verdana;
+            color: #FFFFFF;
+            background-color: #696969;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 50%;
+            padding: 5px;
+            border-radius: 6px;
+	        }
+			
+	        table, td, tr{
+    	    	border: solid 1px;
+    		    width: 50%;
+    		    margin-left: auto;
+	            margin-right: auto;
+	            padding: 1px;
+	            border-spacing: 1px;
+	            border-radius: 6px;
+	            color:#696969 ;
+	            background-color: #FFFFFF;
+	        }
+
+            ::-webkit-input-placeholder { 
+			color: #696969;
+            font-weight: bold;
+            }
+			
+    		#submit{
+    		color:#FFFFFF;
+    		background-color:#696969;
+    		font-family: Verdana;
+    		font-weight: bold;
+    		margin-left:auto;
+    		margin-right:auto;
+    		padding: 5px;
+    		width: 50%;
+    		border-radius: 6px;
+			}
+			#result1, #result2{
+    		color: #0099FF;
+    		background-color: #FFFFFF;
+    		margin-left:auto;
+    		margin-right:auto;
+    		width:50%;
+    		font-size:20px;
+    		text-align:center;
+			}
+
+		</style>
+	</head>
+	
+<body>
+<script type="text/javascript">
+             
+            function display()
+			{
+			    var spectype=document.getElementById("stype").value;
+			    var gcat=document.getElementById("category").value;
+			    var tot=0;
+			    var paytype=document.getElementById("ptype").value;
+			    if(paytype=="Debit card / Credit card")
+			    {
+			        paytype="Card";
+			    }
+			    switch(gcat)
+			    {
+			        case "Classic":tot=599+450;
+			            break;
+			        case "Premium":tot=3000+450;
+			            break;
+			        case "Computer Glass":tot=999+450;
+			            break;
+			    }
+			    document.getElementById("result1").innerHTML  = "Purchase of a "+spectype+" "+gcat+ " has been logged !";
+			    document.getElementById("result2").innerHTML = "An amount of Rs."+tot+",inclusive of tax has been received by "+paytype;
+			    return false;
+			}
+			
+			function disableCardDetailsOnCash()
+			{
+    			if (document.getElementById("ptype").value == "Cash")
+    			{
+    				document.getElementById("cardno").disabled=true;
+    				document.getElementById("edate").disabled=true;
+    			}
+		    	else
+    			{
+    			    document.getElementById("cardno").disabled=false;
+    				document.getElementById("edate").disabled=false;	
+    			}
+			}
+    </script>
+<div>
+<h3> Vision Opticals </h3>
+<form onsubmit="return display();" >
+<table>
+	<tr>
+        <td>Customer Name</td>
+        <td><input type="text" id="cname" name="cname" placeholder="Enter the customer name" pattern="[a-zA-Z\s]+" required></td>
+    </tr>
+
+	<tr>
+       <td>Phone Number</td>
+	   <td><input type="tel" id="phno" name="phno" placeholder="Phone number" pattern="[789]{1}[0-9]{9}" maxlength="10" required></td>
+    </tr>
+	
+	<tr>
+		<td>Email ID</td>
+	    <td><input type="email" id="email" name="email" placeholder="Enter the email id" required></td>
+    </tr> 
+	<tr>
+		<td>Spectacle Type</td>
+		<td><select id="stype" required>
+				<option value="Select Glass">Select Glass</option>
+				<option value="Eye Glass">Eye Glass</option>
+				<option value="Sun Glass">Sun Glass</option>
+				<option value="Blu 0 Computer Glass">Blu 0 Computer Glass</option>
+				<option value="Reading Glass">Reading Glass</option>
+				</select>
+	   </td>
+	</tr>
+	<tr>
+		<td>Frame Brand</td>
+		<td><select id="brand" required>
+		    <option value="Select Brand">Select Brand</option>
+		    <option value="Vincent Chase">Vincent Chase</option>
+		    <option value="John Jacobs">John Jacobs</option>
+		    <option value="Ray Ban">Ray Ban</option>
+		    <option value="Carrera">Carrera</option>
+			<option value="Oakley">Oakley</option>
+			<option value="Vogue">Vogue</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Frame Type</td>
+		<td><select id="ftype" required>
+		    <option value="Select Frame">Select Frame</option>
+		    <option value="Rectangle Frames">Rectangle Frames</option>
+		    <option value="Wayfarer Frames">Wayfarer Frames</option>
+		    <option value="Round Frames">Round Frames</option>
+		    <option value="Aviator Frames">Aviator Frames</option>
+			<option value="Cat-Eye Frames">Cat-Eye Frames</option>
+			<option value="Rimless Frames">Rimless Frames</option>
+			<option value="Half Rim Frames">Half Rim Frames</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Frame Color</td>
+		<td><select id="fcolor" required>
+		    <option value="Select Frame Color">Select Frame Color</option>
+		    <option value="Black">Black</option>
+		    <option value="Brown">Brown</option>
+		    <option value="Grey">Grey</option>
+		    <option value="Blue">Blue</option>
+			<option value="Green">Green</option>
+			<option value="Red">Red</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Glass Category</td>
+		<td><select id="category" required>
+		    <option value="Select Glass Category">Select Glass Category</option>
+		    <option value="Classic">Classic</option>
+		    <option value="Premium">Premium</option>
+		    <option value="Computer Glass">Computer Glass</option>
+		    </select>
+		</td>
+	</tr>
+	<tr>
+        <td>Payment Type</td>
+        <td><select id="ptype" onchange="disableCardDetailsOnCash()" required>
+			<option value="Debit card / Credit card">Debit card / Credit card</option> 
+			<option value="Cash">Cash</option>
+			</select>
+			
+        </td>
+    </tr>
+    <tr>
+        <td>Card No</td>
+        <td><input type="text" id="cardno" name="cardno" placeholder="Enter the card no" pattern="[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4}" maxlength="19" ></td>
+    </tr>
+    <tr>
+        <td>Expiry Date</td>
+        <td><input type="date" id="edate" name="edate"></td>
+    </tr>
+	
+</table>
+<br/>
+<p><input type="submit" id="submit" value="CONFIRM ORDER"></p>
+
+<div id="result1"> </div>
+<div id="result2"> </div>
+</form>
+</div>
+</body>
+</html>

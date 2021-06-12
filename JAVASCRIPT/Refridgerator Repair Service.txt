@@ -1,0 +1,65 @@
+<!document HTML>
+<HTML>
+    <head>
+        <style type="text/css">
+        //apply appropriate style
+        </style>
+        <script>
+            function bookAppointment(){
+                var charge;
+                var name=document.getElementById("customerName").value;
+                var brand=document.getElementById("brandName").value;
+                var type=document.getElementById("refrigeratorType").value;
+                var mail=document.getElementById("email").value;
+                if(type=="Single Door"){
+                    charge=2500;
+                }
+                else if(type=="Double Door"){
+                    charge=5500;
+                }
+                else{
+                    charge=8500;
+                }
+                if(document.getElementById("yearlyMaintenance").checked==true){
+                    var s=charge+1000;
+                    document.getElementById("result").innerHTML= "Hello "+ name+ ", the service appointment copy for  "+ brand +" "+ type+" refrigerator with yearly maintenance will be sent to your email ID "+ mail+ " and the estimated service charge will be Rs "+ s;
+                }
+                else{
+                    document.getElementById("result").innerHTML= "Hello"+ name+", the service appointment copy for"+ brand+ type+" refrigerator without yearly maintenance will be sent to your email ID "+ mail+ "and the estimated service charge will be Rs"+ charge;   
+                }
+            }
+        </script>
+        </head>
+    <body>
+        <h1>REFRIGERATOR REPAIR SERVICE</h1>
+        <form onsubmit="return bookAppointment()">
+        <label>Customer Name   </label><input type="text" id="customerName" placeholder="Enter your name" required><br>
+        <label>Gender          </label><input type="radio" name="male" id="male">Male</label>
+        <input type="radio" name="female" id="female">Female<br>
+        <label>Mobile Number   </label><input type="text" id="mobilenumber" placeholder="Enter your mobile number" pattern="[6-10]{3}-[0-9]{3}-[0-9]{4}" required><br>
+        <label>Email Id        </label><input type="email" id="email" placeholder="Enter your email Id" required><br>
+        <label>Address         </label><textarea rows="5" cols="25" id="address" placeholder="Enter your address" required></textarea><br>
+        <label>Brand Name      </label><input list="brandNames" id="brandName" autocomplete="on" required>
+        <DataList id="brandNames">
+            <option value="LG">
+            <option value="Samsung">
+            <option value="Whirlpool">
+            <option value="Bosch">
+            <option value="Godrej">
+            <option value="Seimens"></option>
+          </datalist></select><br>
+        <label>Refrigerator Type</label><select id="refrigeratorType">
+            <option value="Single Door" >Single Door</option>
+            <option value="Double Door">Double Door</option>
+            <option value="Triple Door">Triple Door</option></select><br>
+        <label>Date for Appointment</label><input type="date" id="dateForAppointment" required><br>
+        <label>Yearly Maintenance  </label><input type="checkbox" id="yearlyMaintenance"><br>
+        <label>Duration in months from the previous service</label><input type="range" min="0" max="6" step="1"><br>
+        <input type="button" id="submit" value="submit" onclick="bookAppointment()"></button>
+        <button type="reset" id="reset" value="clear">reset</button><br>
+        </form>
+        <div id="result">
+
+        </div>
+    </body>
+</HTML>

@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>
+            discount price
+        </title>
+        <script>
+            function CalculateDiscount(){
+                var discount,discountPrice;
+                var price = Number(document.getElementById("price").value);
+                var season = document.getElementById("season").value;
+                switch(season){
+                    case "summer" : discount = 10;
+                                    break;
+                    case "newyear" : discount = 5;
+                                     break;
+                    case "clearance" : discount = 15;
+                                        break;
+                }
+                document.getElementById("discount").innerHTML = "The discount is "+discount+"%";
+                discountPrice = (price - (discount*price/100));
+                document.getElementById("result").innerHTML = "The discounted price : Rs "+discountPrice;
+                return false;
+            }
+        </script>
+        <style>
+        body{
+            background-color: #99FFFF;
+        }
+        h1{
+            font-style: italic;
+            text-align: center;
+            color: #b03060;
+        }
+        table{
+            margin-left: 35%;
+            border-style: 5px solid;
+            border-width: 30%;
+            border-collapse: collapse;
+        }
+        td{
+            border-style: solid;
+            padding: 10px;
+        }
+        div{
+            text-align: center;
+            font-weight: bold;
+        }
+        #discount{
+            font-size: 25px;
+        }
+        #result{
+            font-style: italic;
+            color: #FF0000;
+            font-size: 40px;
+        }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Discount Price</h1>
+        <form onsubmit="return CalculateDiscount()">
+            <table>
+                <tr>
+                    <td><label for="name">Product Name</label></td>
+                    <td><input type="text" id="name" name="name" required pattern="[a-zA-Z][a-zA-Z\s]+"/></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Product Price</label></td>
+                    <td><input type="number" id="price" name="price" min="15001" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="season">Season</label></td>
+                    <td><select id="season" name="season" required>
+                        <option value="summer">SUMMER SALE</option>
+                        <option value="newyear">NEW YEAR SALE</option>
+                        <option value="clearance">CLEARANCE SALE</option>
+                    </select></td>
+                </tr>
+           </table>
+           <input type="submit" id="submit" name="submit" value="GET DISCOUNT PRICE"/>
+        </form>
+        <div id="discount"></div>
+        <div id="result"></div>
+    </body>
+</html>
