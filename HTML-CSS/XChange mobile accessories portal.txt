@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify all the component-ids correctly for your code to get evaluated successfully -->
+    
+        <title> Xchange - One Stop for Mobile-Accessories</title> 
+		<style>
+		
+		*{
+                        background-color: #C2A1A1; 
+			color:#FFFFFF;
+			font-family: Georgia;
+		}
+		
+		input[type="text"] , input[type="number"], input[type="date"], select, textarea{
+			width: 98%;
+		}
+		
+		input[type="range"] {
+			width: 60%;
+		}
+		
+		::placeholder{
+			color:#FFFFFF;
+		}
+
+		h3{
+			border: 2px solid #FFFFFF;
+			/* Fill the attributes and values */
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center ;
+			width: 60%;
+			color: #5D4079;
+			background-color: #FFFFFF;
+			border-radius: 6px;
+			border-spacing: 2px;
+			font-size: 30px;
+			
+		}
+		
+		table{
+			/* Fill the attributes and values */
+			width:60%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		
+		td{
+			border: 2px solid #FFFFFF;
+			color:#FFFFFF;
+			/* Fill the attributes and values */
+			color: #FFFFFF;
+			padding: 5px;
+			border-radius: 6px;
+			border-spacing: 5px;
+		}
+		
+		#submit	 {   
+		    margin-left:45%;
+			/* Fill the attributes and values */
+			color: #FFFFFF;
+			background-color: #5D4079;
+			border-radius: 6px;
+			padding: 3px;
+			font-weight: bold;
+		}
+		
+		#submit:hover {      
+			background-color: #FFFFFF; 
+        	color:#5D4079;
+		}
+		
+		.d{
+			color:#000000;
+		}
+
+		.c{
+			/* Fill the attributes and values */
+			color: #5D4079;
+			background-color: #FFFFFF;
+			font-weight: bold ;
+		}		
+		
+		</style>
+	</head>
+	
+<body >
+
+
+<script>
+	function show_value(x)
+	{
+	document.getElementById("demo").innerHTML=x;
+	}
+</script>
+
+<h3>Xchange - One Stop for Mobile-Accessories</h3>
+<table>
+	<tr>
+	    <td class="c">Furnish Details</td>
+	</tr>
+
+	<tr>
+		
+		<td><input type="text" name="mtype" id="mtype" placeholder="Enter the mobile type*" required/></td>
+		<td><input type="text" name="atype" id="atype" placeholder="Enter the accessory type*" required/></td>
+	</tr>
+	
+	<tr>
+		<td>Purchase date :<br/><input type="date" name="pdate" id="pdate" placeholder="mm/dd/yyyy" required /></td>
+		<td>Available from :<br/><input type="date" name="availablefrom" id="availablefrom" placeholder="mm/dd/yyyy" required /></td>		
+	</tr>
+	
+	<tr>
+		<td>Location :</td>
+		<td><input type="text" name="location" id="location" placeholder="City,State*" required/></td>
+		
+	</tr>
+	
+	<tr>
+		<td colspan="2">Reason for selling : <textarea rows="4" columns="50" id="reason" required></textarea></td>
+	</tr>
+	
+	<tr>
+		<td>Price Quoted : </td>
+		<td> <input type="range" name="price" id="price" min="500" max="20000" required   onchange="show_value(this.value);" >
+		<span id="demo"></span></td>	
+    </tr>
+    
+	<tr>
+		<td colspan="2">Upload pics (in .png format) :  <input type="file" name="pic" id="pic" value="Choose Files"  multiple required></td>
+	</tr>
+	
+	<tr>
+		<td><input type="text" name="name" id="name" placeholder="Enter your name*" required/></td>
+		<td><input type="tel" id="phno" placeholder="Contact number*" max="10" pattern="[789]{1}[0-9]{9}" required ></td>
+	</tr>
+	
+ 
+</table>
+<br/>
+
+<p><input type="button" name="submit" id="submit" value="POST PRODUCT" /></p>
+
+</body>
+</html>

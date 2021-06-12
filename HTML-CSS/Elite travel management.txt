@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify all the component-ids correctly for your code to get evaluated successfully -->
+    
+        <title>Elite Travel Management</title> 
+		<style>
+		
+		input[type="number"] {
+		width:98%;
+		}
+		input[type="text"] {
+		width:98%;
+		}
+		input[type="date"] {
+		width: 98%;
+		}
+		input[type="email"] {
+		width:98%;
+		}
+		input[type="tel"] {
+		width: 98%;
+		}
+		select {
+		width: 98%;
+		}
+
+		.split {
+		height: 100%;
+		width: 50%;
+		position: fixed;
+		overflow: scroll;
+		z-index: 1;
+		top: 0;
+		}
+		  
+		.left {	
+	       left: 0;
+		}
+		
+		.right{
+		  right: 0;
+		  background-color: #74B14E;
+		  width:60%;
+		  padding: 10px;
+		
+		}
+		
+		#image{
+		  width: 120%;
+		  height: 90%;
+		}
+
+		h3{
+          text-align: center;
+          font-size: 20px;
+          font-family: Georgia;
+          border-radius: 6px;
+          padding: 5px;
+		}
+		
+		table, h3{
+		border: 3px solid #FFFFFF;
+		border-spacing: 2px;
+		width:97%;
+		}
+		
+		td{
+		border: 1px solid #FFFFFF;
+		color:#FFFFFF;
+		background-color: #6698FF ;
+		border-spacing : 5px;
+		}
+		   
+		#submit,h3{	
+		color: #C21807;
+		font-weight: bold ;
+		background-color: #FFFFFF ;
+		}
+		
+		table,td,#submit{
+		font-family: Georgia;
+		font-size: 15px;
+		border-radius:6px;
+		padding: 5px ;
+		}
+			
+		#submit:hover {      
+		background-color: #C21807; 
+		color:#FFFFFF; 
+		}
+		
+		#offers:hover {      
+		color: #C21807; 
+		}
+		
+		.b{
+		  color: #FFFFFF;
+		}
+			
+		.c{
+		   color:#C21807;
+		   font-size: 15px;
+		   font-family: Georgia;
+		   font-weight: bold;
+		}
+
+		.d{
+		border: 0px;;
+		}
+		</style>
+	</head>
+	
+<body>
+<script>
+
+			function show_value(x)
+			{
+			document.getElementById("demo").innerHTML=x;
+			}
+</script>
+
+<div class="split left"><img src="ELITE.png " id="image"></div>
+<div class="split right">
+    
+<h3> ELITE TRAVEL MANAGEMENT </h3>
+<table>
+	<tr class="d">
+	    <td class="d"><a href="#travel" id="travel_info" class="b">Travel-info</a></td>
+	    <td class="d"><a href="#personal" id="personal_info" class="b">Personal-info</a></td>
+	    <td class="d"><a href="#preferences" id="preferences_info" class="b">Activities Preferences</a></td>
+	</tr>
+	
+	<tr>
+	    <td colspan="3" class="c" id="travel">Travel Information</td>
+	</tr>
+	
+	<tr>
+		<td>Select your travel destination : <br/>
+		    <select id="destination">
+		        <option value="Select.." required>Select..</option>
+		        <option value="London">London</option>
+		        <option value="Canada">Canada</option>
+		        <option value="Mauritius">Mauritius</option>
+		        <option value="Switzerland">Switzerland</option>
+		    </select>
+		</td>
+		<td>Date of departure : <br/>
+		    <input type="date" id="dateofdeparture" placeholder="dd-mm-yyyy" required>
+		</td>
+		<td>Date of arrival : <br/>
+		    <input type="date" id="dateofarrival" placeholder="dd-mm-yyyy" required>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input type="number" id="kids" placeholder="No of kids" required></td>
+		<td><input type="number" id="teens" placeholder="No of teens" required></td>
+		<td><input type="number" id="adults" placeholder="No of adults" required></td>
+	</tr>
+	
+	<tr>
+	    <td>Visa Assistance</td>
+	    <td class="d"><input type="radio"  name ="visa" id="yes" required>Yes</td>
+	    <td class="d"><input type="radio"  name ="visa" id="no" required>No</td>
+	</tr>
+	
+	
+	<tr>
+	    <td colspan="3" class="c" id="personal">Personal Information</td>
+	</tr>
+	
+	<tr>
+        <td>Customer Name</td>
+        <td><input type="text" id="cname" placeholder="Enter the customer name" pattern="^[a-zA-Z\s]+$" required></td>
+    </tr>
+
+	<tr>
+       <td>Phone Number</td>
+	   <td><input type="tel" id="phno" placeholder="Enter the phone number" pattern="[7-9]{1}[0-9]{9}" required></td>
+    </tr>
+	
+	<tr>
+		<td>Email ID</td>
+	    <td><input type="email" id="email" placeholder="Enter the email id" required></td>
+    </tr> 
+	
+	<tr>
+		<td colspan="3" class="c" id="preferences">Activities Preferences</td>
+    </tr>
+
+	<tr class="d">
+		<td class="d"><input type="checkbox" name="charges" id="museumsAndHistoricSites">Museums & Historic Sites</td> 	
+		<td class="d"><input type="checkbox" name="charges" id="culture">Culture</td>
+		<td class="d"><input type="checkbox" name="charges" id="beaches">Beaches</td> 
+	</tr>
+	<tr>
+		<td class="d"><input type="checkbox" name="charges" id="shopping">Shopping</td> 
+		<td class="d"><input type="checkbox" name="charges" id="wildlife">Wildlife</td>
+		<td class="d"><input type="checkbox" name="charges" id="relaxing">Relaxing</td> 	
+	</tr>
+	
+	<tr>
+		<td colspan="3" ><a href="#submit" class="b" id="offers">**Click here to unlock exclusive offers</a></td>
+	</tr>
+ 
+</table>
+<br>
+<p><input type="button" id="submit" value="BUILD PACKAGE"></p>
+</div>
+
+</body>
+</html>

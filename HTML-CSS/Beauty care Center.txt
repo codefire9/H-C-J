@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beauty Care Center</title>
+   <style>
+   
+::placeholder {
+    color: #6A5ACD;
+ opacity: 2;
+}
+
+input[type="email"], input[type="tel"], input[type="number"], input[type="text"], input[type="date"], textarea, select, #services {
+    width: 85%;
+ color: #6A5ACD;
+ font-weight: bold;
+ background: transparent;
+ border-radius: 6px;
+ border-style: solid;
+ border-width: 2px;
+ border-color: #FFA07A;
+}
+
+input[type="button"] {
+ background-color: #08088A;
+}
+
+input[type="checkbox"]#terms:checked+a {
+ color: #40ff00;
+}
+
+body {
+    background-color: #000000 ;
+}
+
+h3 {
+    
+    color: #FFFFFF;
+    background-color: #2F4F4F;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 35%;
+    font-family: Verdana;
+    border-style: 1px solid;
+    border-radius: 6px;
+}
+
+label span{
+  color: #F0F8FF;
+}
+
+table {
+   
+   width: 30%;
+   border-style: 3px groove;
+   margin-left: auto;
+      margin-right: auto;
+      border-spacing: 5px;
+      border-radius: 6px;
+}
+
+#appointment td {
+ border-width: 1px;
+ border-style: solid;
+ border-color: #F4A460;
+ padding: 8px;
+}
+
+#terms_ref {
+    color: #00bfff;
+}
+
+#submit { 
+  color:#FFEFD5;
+  font-weight: bold;
+  background: transparent;
+  border-radius: 6px;
+}
+
+#submit:hover {
+    background-color: #2E8B57;
+ color: #FFFFFF;
+}
+
+.b{
+  width: 50%;
+  margin-left: auto;
+  margin-right: 14em;
+  
+}
+</style>
+</head>
+
+<body>
+
+ <h3>Beauty Care Center - Appointment</h3>
+ 
+ <table id="appointment">
+  <tr>
+   <th id="details" colspan="2"></th>
+  </tr>
+  <tr>
+   <td>
+    <label for="name" id="l_name"><span><b>Name*</b></span>:</label>
+   </td>
+   <td>
+       
+    <input type="text" name="name" id="name" placeholder="Enter your name"  />
+    
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label id="l_gender"><span><b>Gender*</b></span>:</label>
+   </td>
+   <td>
+    
+     <input type="radio" id="male" name="gender" value="Male" ><label for="male" id="l_male"><span><b> Male </b></span></label>
+     <input type="radio" id="female" name="gender" value="Female" ><label for="female" id="l_female"><span><b> Female</b></span></label> 
+     <input type="radio" id="others" name="gender" value="Others" > <label for="others" id="l_others"><span><b> Others</b></span></label>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label for="email" id="l_email"><span><b>E-mail address</b></span>:</label>
+   </td>
+   <td>
+       
+    <input type="email" name="email" id="email" placeholder="Example:abc@gmail.com" />
+    
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="mobileNo" id="l_mobileNo"><span><b>Mobile No*</b></span>:</label>
+   </td>
+   <td>
+  
+    <input type="number" name="mobileNo" id="mobileNo" placeholder="Enter your mobile no" />
+  
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label for="services" id="l_services"><span><b>Services*</b></span>:</label>
+   </td>
+   <td>
+       <input type="text" name="services" id="services" list="serviceList" />
+       <datalist id="serviceList">
+           <option value="Manicure">
+               <option value="Pedicure">
+                   <option value="Facial">
+                       <option value="Threading">
+                           <option value="Waxing">
+                               <option value="Hair Spa">
+                                   <option value="Body Massage">
+                                       <option value="Others">
+       </datalist>
+    
+
+   </td>
+  </tr>
+
+ <tr>
+   <td>
+    
+    <label for="date" id="l_date"><span><b>Date*</b></span>:</label>
+   </td>
+   <td>
+       
+   
+   <input type="date" name="date" id="date" />
+   
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label for="time" id="l_time"><span><b>Time*</b></span>:</label>
+   </td>
+   <td>
+       
+    <select id="time">
+        <option value="">-Select one-</option>
+        <option value="10.00 AM">10.00 AM</option>
+<option value="10.30 AM">10.30 AM</option>
+        <option value="11.00 AM">11.00 AM</option>
+        <option value="11.30 AM">11.30 AM</option>
+        <option value="12.00 PM">12.00 PM</option>
+        <option value="12.30 PM">12.30 PM</option>
+        <option value="1.00 PM">1.00 PM</option>
+        <option value="1.30 PM">1.30 PM</option>
+        <option value="2.00 PM">2.00 PM</option>
+    </select>
+
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label for="address" id="l_address"><span><b>Address</b></span>:</label>
+   </td>
+   <td>
+    <textarea rows="5" cols="25" placeholder="Enter your address" id="address"></textarea>
+   </td>
+  </tr>
+
+ </table>
+ <p class="b"><input type="checkbox" name="terms" id="terms" /><a href="#submit" id="terms_ref">I agree to terms of service and privacy policy</a></p>
+    <p class="b"><input type="button" name="submit" id="submit" value="Submit" /></p>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify ALL the component-ids correctly for your code to get evaluated successfully -->
+   <title>Health Care Center</title>
+   <style type="text/css">
+   
+::placeholder {
+ color: #40E0D0;
+ opacity: 2;
+}
+
+input[type="email"], input[type="tel"], input[type="number"], input[type="text"],
+ input[type="date"], textarea, select, #services {
+    width: 85%;
+ color: #40E0D0;
+ font-weight: bold;
+ background: transparent;
+ border-radius: 6px;
+ border-style: solid;
+ border-width: 2px;
+ border-color: #FFA07A;
+}
+
+input[type="button"] {
+ background-color: #08088A;
+}
+
+input[type="checkbox"]#terms:checked+a {
+ color: #FFFF00;
+}
+
+body {
+    /* Fill the attribute and value */
+    background-color: #191970;
+    
+}
+
+h3 {
+    /* Fill the attributes and values */
+    color: #FFFFFF;
+    background-color: #696969;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 40%;
+    font-family: Verdana;
+    border-style: 1px solid;
+    border-radius: 6px;
+}
+
+label span{
+    color: #F0F8FF;
+}
+table {
+    /* Fill the attributes and values */
+    width: 30%;
+    border-style: 3px groove;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 5px;
+    border-radius: 6px;
+}
+
+#appointment td {
+    /* Fill the attributes and values */
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F4A460;
+    font-size: 15px;
+    padding: 8px;
+    
+}
+
+#terms_ref {
+ color: #9ACD32;
+}
+
+#submit { 
+  /* Fill the attributes and values */
+  color: #FFEFD5;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+#submit:hover {
+    background-color: #8B4513;
+ color: #FFFFFF;
+}
+
+.b {
+  /* Fill the attributes and values */
+  width: 50%;
+  margin-left: auto;
+  margin-right: 14em;
+}
+</style>
+</head>
+
+<body>
+
+ <h3>Health Care Center-Appointment</h3>
+ <table id="appointment">
+  <tr>
+   <th id="details" colspan="2"></th>
+  </tr>
+  <tr>
+   <td>
+    <label><span><b>Name*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Name --> 
+    <input type="text" name="name" id="name" placeholder="Enter your name" required />
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label><span><b>Gender*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Gender --> 
+     <input type="radio" id="male " name="gender" value="Male" required ><label><span><b>Male</b></span></label>
+     <input type="radio" id="female " name="gender" value="Female" required ><label><span><b>Female</b></span></label> 
+     <input type="radio" id="others " name="gender" value="Others" required ><label><span><b>Others</b></span></label>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label><span><b>E-mail address</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for E-mail address --> 
+    <input type="email" name="email" id="email" placeholder="Example:abc@gmail.com" required />
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label><span><b>Mobile No*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Mobile No -->
+    <input type="tel" name="mobileNo" id="mobileNo" placeholder="Enter your mobile no" required />
+    
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label><span><b>Services*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Services and its Data list --> 
+    <input list="serviceList"  id="services" name="services" required >
+    <datalist id="serviceList" required >
+        <option value="Dentistry">Dentistry</option>
+        <option value="Midwifery">Midwifery</option>
+        <option value="Nursing">Nursing</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Optometry">Optometry</option>
+
+ 
+<option value="Psychology">Psychology</option>
+        <option value="Physical therapy">Physical therapy</option>
+        <option value="Others">Others</option>
+    </datalist>
+   </td>
+  </tr>
+  
+        <tr>
+   <td>
+    <label><span><b>Date*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Date -->
+    <input type="date" name="date" id="date" required />
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label><span><b>Time*</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Time --> 
+    <select name="time" id="time">
+        <option value="10.00AM">10.00AM</option>
+        <option value="10.30AM">10.30AM</option>
+        <option value="11.00AM">11.00AM</option>
+        <option value="11.30AM">11.30AM</option>
+        <option value="12.00PM">12.00PM</option>
+        <option value="12.30PM">12.30PM</option>
+        <option value="01.00PM">01.00PM</option>
+        <option value="01.30PM">01.30PM</option>
+        <option value="02.00PM">02.00PM</option>
+    </select>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label><span><b>Address</b></span>:</label>
+   </td>
+   <td>
+    <!-- Fill the code for Address --> 
+    <textarea name="address" id=address rows="5" cols="25" placeholder="Enter your address" required ></textarea>
+   </td>
+  </tr>
+
+ </table>
+ <p class="b"><input type="checkbox" name="terms" id="terms" /><a href="#submit" id="terms_ref">I agree to the terms of service and privacy policy</a></p>
+    <p class="b"><input type="button" name="submit" id="submit" value="Submit" /></p>
+
+</body>
+</html>

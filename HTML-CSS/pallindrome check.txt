@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+    
+    <head>
+        <title>Palindrome</title>
+        <script>
+        function palindrome()
+        {
+            var enteredstring=document.getElementById("word").value;
+            enteredstring=((enteredstring.toLowerCase()).split(" ")).join("");
+            var splittedarray=enteredstring.split("");
+            var reversestring=splittedarray.reverse().join("");
+            
+            if(enteredstring==reversestring)
+            {
+                alert("The entry is a Palindrome");
+            }
+            else
+            {
+                alert("The entry is not a Palindrome");
+            }
+            return false
+        }
+         </script>   
+    </head>
+    <body>
+        <form name="palform">
+            <label for="plain">Enter word/sentence to check for palindrome:</label>
+            <input type="text" id="word" name="palin" required><br/>
+            <input type="submit" name="palinbtn" value="CheckPalindrome" onclick= "return palindrome ()">
+        </form>
+    </body>
+</html>

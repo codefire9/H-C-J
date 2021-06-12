@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Remove the Comments and fill up the relevant code -->
+    <!-- Write necessary code wherever needed to complete this code challenge  -->
+    <!-- Do specify ALL the component-ids correctly for your code to get evaluated successfully -->
+        <title>Platinum Properties</title> 
+  <style>
+  
+  input[type="number"] {
+  width:98%;
+  }
+  input[type="text"] {
+  width:98%;
+  }
+  input[type="date"] {
+  width: 98%;
+  }
+  input[type="email"] {
+  width:98%;
+  }
+  input[type="tel"] {
+  width: 98%;
+  }
+  select {
+  width: 98%;
+  }
+
+  .split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  overflow: scroll;
+  z-index: 1;
+  top: 0;
+  }
+    
+  .left { 
+         /* Fill the attribute and value */
+         left: 0;
+  }
+  
+  .right {
+      /* Fill the attribute and value */
+      right: 0;
+      background-color: #74B14E;
+      width: 60%;
+      padding: 10px;
+  }
+  
+  #image{
+      /* Fill the attribute and value */
+      width: 170%;
+      height: 100%;
+  }
+  h3{
+            /* Fill the attribute and value */
+            text-align: center;
+            font-size: 20px;
+            font-family: Georgia;
+            border-radius: 6px;
+            padding: 5px;
+  }
+  
+  table, h3{
+      /* Fill the attribute and value */
+     
+      border-spacing: 2px;
+      width: 97%;
+  }
+  
+  td{
+         /* Fill the attribute and value */
+      color: #6600FF;
+      background-color: #DFBF9F;
+      border-spacing: 5px;
+  }
+     
+  #submit,h3{ 
+      /* Fill the attribute and value */
+      color: #C21807;
+      font-weight: bold;
+      background-color: #FFFFFF;
+  }
+  
+  table,td,#submit{
+      /* Fill the attribute and value */
+      font-size: 15px;
+      font-family: Georgia;
+      border-radius: 6px;
+      padding: 5px;
+  }
+   
+  #submit:hover {      
+      background-color: #C21807; 
+      color:#FFFFFF; 
+  }
+  
+  #offers:hover {      
+      color: #C21807; 
+  }
+  
+  .b{
+      /* Fill the attribute and value */
+      color: #6600FF;
+  }
+   
+  .c{
+      /* Fill the attribute and value */
+      color: #C21807;
+      font-size: 15px;
+      font-family: Georgia;
+      font-weight: bold;
+  }
+
+  .d{
+      border: 0px;;
+  }
+  </style>
+ </head>
+ 
+<body>
+<script>
+
+   function show_value(x)
+   {
+   document.getElementById("demo").innerHTML=x;
+   }
+</script>
+
+<div class="split left"><img src="PLATINUM.png" id="image"></div>
+<div class="split right">
+<h3><!-- Fill the heading text -->Platinum Properties</h3>
+<table>
+ <tr class="d">
+     <td class="d"><a id="property_info" class="b" href="#property">Property-info</a></td>
+     <td class="d"><a id="personal_info" class="b" href="#personal">Personal-info</a></td>
+     <td class="d"><a id="features_info" class="b" href="#features">Extra Features</a></td>
+ </tr>
+ 
+ <tr>
+     <td colspan="3" class="c" id="property" href="#property_info">Property Information</td>
+ </tr>
+ 
+ <tr>
+  <td>Select property Type: <br/>
+  <select id="ptype" required>
+   <option value="Select..">Select..</option>
+   <option value="Apartment">Apartment</option>
+   <option value="Independent House">Independent House</option>
+   <option value="Vila">Vila</option>
+   <option value="Compact Home">Compact Home</option>
+   </select><!-- Fill the code for dropdown to select property type --></td>
+  <td>BHK Type <br/>
+  <select id="bhk" required>
+   <option value="Select..">Select..</option>
+   <option value="1BHK">1BHK</option>
+   <option value="2BHK">2BHK</option>
+   <option value="3BHK">3BHK</option>
+   <option value="4BHK">4BHK</option>
+   </select><!-- Fill the code for dropdown to select BHK type --></td>
+  <td>Select the possession status <br/>
+  <select id="status" required>
+   <option value="Select..">Select..</option>
+   <option value="Plot">Plot</option>
+   <option value="Under Construction">Under Construction</option>
+ 
+<option value="Semi Furnished">Semi Furnished</option>
+   <option value="Ready To Move">Ready To Move</option>
+   </select><!-- Fill the code for dropdown to select possession status --></td>
+ </tr>
+ 
+ <tr>
+     <td>Price Range:</td>
+     <td class="d"><input type="number" id="from" placeholder="From" required><!-- Fill the code for price range from --></td>
+     <td class="d"><input type="number" id="to" placeholder="To" required><!-- Fill the code for price range to --></td>
+ </tr>
+ 
+ <tr>
+     <td>Location:</td>
+     <td class="d" colspan="2"><input type="text" id="location" placeholder="Enter the location" required><!-- Fill the code for location --></td>
+ </tr>
+ 
+ <tr>
+     <td colspan="3" class="c" id="personal" href="#personal_info">Personal Information</td>
+ </tr>
+ 
+ <tr>
+        <td>Customer Name</td>
+        <td colspan="2"><input type="text" id="cname"  placeholder="Enter the customer name" required><!-- Fill the code for Customer Name --></td>
+    </tr>
+
+ <tr>
+       <td>Phone Number</td>
+    <td colspan="2"><input type="tel" id="phno" pattern="[987]{1}[0-9]{9}" placeholder="Enter the phone number" required><!-- Fill the code for Phone Number --></td>
+    </tr>
+ 
+ <tr>
+  <td>Email ID</td>
+     <td colspan="2"><input type="email" id="email" placeholder="Enter the email id" required><!-- Fill the code for Email ID --></td>
+    </tr> 
+ 
+ <tr>
+  <td colspan="3" class="c" id="features" href="#features_info">Extra Features</td>
+    </tr>
+
+ <tr class="d">
+  <td class="d"><input type="checkbox" id="parking" name="optional"><!-- Fill the code for Parking-->Parking</td>  
+  <td class="d"><input type="checkbox" id="swimming pool" name="optional"><!-- Fill the code for Swimming Pool-->Swimming Pool</td>
+  <td class="d"><input type="checkbox" id="super market" name="optional"><!-- Fill the code for Super Market-->Super Market</td> 
+ </tr>
+ 
+ <tr>
+  <td class="d"><input type="checkbox" id="park" name="optional"><!-- Fill the code for Park-->Park</td> 
+  <td class="d"><input type="checkbox" id="library" name="optional"><!-- Fill the code for Library-->Library</td>
+  <td class="d"><input type="checkbox" id="playground" name="optional"><!-- Fill the code for Play Ground-->Play Ground</td>  
+ </tr>
+ 
+ <tr>
+  <td colspan="3" ><a  id="offers" class="b" href="#submit">**Click here to unlock exclusive offers</a></td>
+ </tr>
+ 
+</table>
+<br/>
+<p><!-- Fill the code for Submit --><input type="button" id="submit" value="CHECK AVAILABILITY"></p>
+</div>
+
+</body>
+</html>
